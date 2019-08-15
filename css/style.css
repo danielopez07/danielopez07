@@ -248,3 +248,7 @@ footer a:focus {
 footer span {
   padding: 1em;
 }
+
+footer section {
+  margin: 1em auto;
+}
