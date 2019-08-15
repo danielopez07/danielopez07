@@ -14,9 +14,13 @@
 
 /* 1. Tags */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--dark-gray);
-  color: var(--soft-gray);
+  color: #fff;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -26,6 +30,28 @@ body {
 nav {
   text-align: right;
   padding: 1em;
+  text-align: center;
+  background-color: var(--dark-gray);
+  opacity: .95;
+  /* works fine, but too traditional*/
+  position: fixed;
+  top: 0;
+
+  /* I would like to make sticky work */
+  /*
+  position: sticky;
+  position: -webkit-sticky;
+  top: 5em;
+  */
+}
+@media screen and (min-width: 768px) {
+  nav {
+    width: 98%; /*otherwise portuguese gets cut off*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 nav a {
   padding: .5em;
@@ -82,7 +108,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 90%;
 }
 @media screen and (min-width: 768px) {
   #about div.flex {
@@ -90,6 +116,20 @@ header {
     margin: 0 auto;
   }
 }
+
+#skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-image: url("../imgs/code-blur.jpeg");
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  #skills {
+    height: 100vh;
+  }
+}
+
 
 #about {
   background-image: linear-gradient(rgba(40, 44, 52, 0.8), rgba(40, 44, 52, 0.8)), url("../imgs/mapa.jpeg");
@@ -103,64 +143,65 @@ header {
   }
 }
 
-#proyectos section {
+#projects section {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  width: 90%;
+  margin: 1em auto;
 }
-#proyectos h2 {
+#projects h2 {
   margin: 4em auto 2em;
 }
 
-#grid-proyectos img {
+#grid-projects img {
   height: 100%;
   width: 100%;
   overflow: hidden;
 
 }
-#grid-proyectos figure {
+#grid-projects figure {
   margin: 0;
 }
 
-#grid-proyectos {
+#grid-projects {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     "fig1"
-    "proyecto1"
+    "project1"
     "fig2"
-    "proyecto2"
+    "project2"
     "fig3"
-    "proyecto3"
+    "project3"
     "fig4"
-    "proyecto4";
+    "project4";
   grid-gap: 0px;
 }
-
 @media screen and (min-width: 768px) {
-  #grid-proyectos {
+  #grid-projects {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
-      "fig1 proyecto1"
-      "proyecto2 fig2"
-      "fig3 proyecto3"
-      "proyecto4 fig4";
+      "fig1 project1"
+      "project2 fig2"
+      "fig3 project3"
+      "project4 fig4";
   }
 }
 
-#proyecto1 {
-  grid-area: proyecto1;
+#project1 {
+  grid-area: project1;
 }
-#proyecto2 {
-  grid-area: proyecto2;
+#project2 {
+  grid-area: project2;
 }
-#proyecto3 {
-  grid-area: proyecto3;
+#project3 {
+  grid-area: project3;
 }
-#proyecto4 {
-  grid-area: proyecto4;
+#project4 {
+  grid-area: project4;
 }
 #fig1 {
   grid-area:fig1;
