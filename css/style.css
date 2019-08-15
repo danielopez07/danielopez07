@@ -36,6 +36,7 @@ nav {
   /* works fine, but too traditional*/
   position: fixed;
   top: 0;
+  width: 100%
 
   /* I would like to make sticky work */
   /*
@@ -54,7 +55,7 @@ nav {
   }
 }
 nav a {
-  padding: .5em;
+  padding: 1em .5em;
 }
 a {
   color: var(--soft-gray);
