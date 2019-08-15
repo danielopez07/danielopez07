@@ -26,32 +26,31 @@ body {
   margin: 0;
   padding: 0;
 }
+p {
+  font-family: Courier, monospace;
+}
 
 nav {
   text-align: right;
-  padding: 1em;
+  padding: .5em;
   text-align: center;
   background-color: var(--dark-gray);
   opacity: .95;
-  /* works fine, but too traditional*/
-  position: fixed;
-  top: 0;
-  width: 100%
-
-  /* I would like to make sticky work */
-  /*
   position: sticky;
   position: -webkit-sticky;
-  top: 5em;
-  */
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
 }
 @media screen and (min-width: 768px) {
   nav {
-    width: 98%; /*otherwise portuguese gets cut off*/
-    display: flex;
+    /* width: 98%; /*otherwise portuguese gets cut off*/
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 }
 nav a {
@@ -80,7 +79,7 @@ a:focus {
 
 /* 2. Header */
 header {
-  height: 100vh;
+  height: 90vh;
   /* background-image: url("../imgs/code-blur.jpeg"); */
   animation: heading;
   animation-duration: 4s;
@@ -120,14 +119,29 @@ header {
 
 #skills {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   background-image: url("../imgs/code-blur.jpeg");
   background-size: cover;
 }
 @media screen and (min-width: 768px) {
   #skills {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     height: 100vh;
+  }
+}
+#skills img {
+  max-width: 40%;
+  margin: auto;
+}
+.skill {
+  margin: 1em auto;
+  padding: 0 1em;
+}
+@media screen and (min-width: 768px) {
+  .skill {
+    width: 30%;
   }
 }
 
